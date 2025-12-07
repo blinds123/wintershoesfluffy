@@ -1,0 +1,230 @@
+{
+  "testimonials": [
+    {
+      "name": "Emma K.",
+      "platform": "tiktok",
+      "rating": 5,
+      "text": "these are literally the coziest shoes i've ever owned!! the shearling is SO soft and they keep my feet warm in the snow ❄️",
+      "date": "3 days ago",
+      "img": 0
+    },
+    {
+      "name": "Sophia M.",
+      "platform": "instagram",
+      "rating": 5,
+      "text": "was worried about sizing but these fit perfectly! the velcro closure makes it so easy to adjust. def size up if you want to wear thick socks though 🖤",
+      "date": "1 week ago",
+      "img": 1
+    },
+    {
+      "name": "Jessica R.",
+      "platform": "tiktok",
+      "rating": 5,
+      "text": "the quality is insane for the price!! i compared these to my friend's INUIKII sneakers and honestly can't tell the difference. saved like $200 💯",
+      "date": "2 days ago",
+      "img": 2
+    },
+    {
+      "name": "Mia L.",
+      "platform": "facebook",
+      "rating": 5,
+      "text": "Best winter shoes I've purchased in years. The shearling lining keeps my feet incredibly warm even in -10 degree weather. No more cold toes!",
+      "date": "5 days ago",
+      "img": 3
+    },
+    {
+      "name": "Chloe B.",
+      "platform": "instagram",
+      "rating": 5,
+      "text": "obsessed!! wore these to a winter market and got so many compliments. they're cute AND functional which is rare",
+      "date": "4 days ago",
+      "img": 4
+    },
+    {
+      "name": "Ava T.",
+      "platform": "tiktok",
+      "rating": 5,
+      "text": "can't believe these are only $59?? i was about to drop €219 on those viral inuikii ones but these are literally the same quality",
+      "date": "1 day ago",
+      "img": 5
+    },
+    {
+      "name": "Isabella H.",
+      "platform": "instagram",
+      "rating": 5,
+      "text": "was skeptical about the fit but they're perfect! i'm usually between sizes and the velcro makes them adjustable. my feet stay warm all day ❄️",
+      "date": "6 days ago",
+      "img": 6
+    },
+    {
+      "name": "Madison P.",
+      "platform": "tiktok",
+      "rating": 4,
+      "text": "the quality surprised me tbh. wool lining is thick and the stitching looks really well done. only thing is they're bulkier than expected but i love it",
+      "date": "3 days ago",
+      "img": 7
+    },
+    {
+      "name": "Olivia G.",
+      "platform": "facebook",
+      "rating": 5,
+      "text": "My feet are always freezing in winter and these have been a game changer. The shearling is so plush and warm. Highly recommend for cold climates!",
+      "date": "1 week ago",
+      "img": 8
+    },
+    {
+      "name": "Charlotte W.",
+      "platform": "google",
+      "rating": 5,
+      "text": "Excellent value for money. European craftsmanship really shows in the details. The anti-slip sole is perfect for icy sidewalks.",
+      "date": "4 days ago",
+      "img": 9
+    },
+    {
+      "name": "Amelia S.",
+      "platform": "tiktok",
+      "rating": 5,
+      "text": "no cap best purchase of the winter!! they look expensive af and everyone thinks they're designer 🔥",
+      "date": "2 days ago",
+      "img": 10
+    },
+    {
+      "name": "Harper D.",
+      "platform": "instagram",
+      "rating": 5,
+      "text": "so many people asking where i got these! the warm brown color goes with everything and they're SO comfortable",
+      "date": "5 days ago",
+      "img": 11
+    },
+    {
+      "name": "Evelyn C.",
+      "platform": "tiktok",
+      "rating": 5,
+      "text": "literally wearing these every single day. the wool lining is a dream and my feet don't sweat like they do in other winter boots",
+      "date": "1 week ago",
+      "img": 12
+    },
+    {
+      "name": "Abigail F.",
+      "platform": "facebook",
+      "rating": 4,
+      "text": "I was concerned about sizing since I have wider feet, but the velcro strap is a lifesaver. Very comfortable and warm. Would definitely buy again.",
+      "date": "3 days ago",
+      "img": 13
+    },
+    {
+      "name": "Emily V.",
+      "platform": "trustpilot",
+      "rating": 5,
+      "text": "Outstanding quality for the price point. The shearling is genuine and thick, construction is solid, and they've held up perfectly through daily winter wear. Comparable to brands 3x the price.",
+      "date": "2 weeks ago",
+      "img": 14
+    },
+    {
+      "name": "Ella N.",
+      "platform": "instagram",
+      "rating": 5,
+      "text": "can't believe i almost spent €200+ on those other sneakers when these exist!! same vibe, same warmth, way better price",
+      "date": "4 days ago",
+      "img": 15
+    },
+    {
+      "name": "Scarlett J.",
+      "platform": "tiktok",
+      "rating": 5,
+      "text": "the anti-slip sole is legit!! walked on ice and didn't slip once. plus they're so cozy i never want to take them off ❄️",
+      "date": "6 days ago",
+      "img": 16
+    },
+    {
+      "name": "Victoria M.",
+      "platform": "google",
+      "rating": 5,
+      "text": "Perfect for winter travel. Wore these throughout my trip to Iceland and my feet stayed warm and dry. The velcro is convenient for airport security too.",
+      "date": "1 week ago",
+      "img": 17
+    },
+    {
+      "name": "Grace K.",
+      "platform": "facebook",
+      "rating": 5,
+      "text": "My daughter loves hers so much I ordered a pair for myself! The quality really is impressive and they look much more expensive than they are.",
+      "date": "5 days ago",
+      "img": 18
+    },
+    {
+      "name": "Lily R.",
+      "platform": "instagram",
+      "rating": 5,
+      "text": "obsessed with how stylish these are!! getting compliments every time i wear them. the shearling detail is chef's kiss 🖤",
+      "date": "2 days ago",
+      "img": 19
+    },
+    {
+      "name": "Zoey A.",
+      "platform": "tiktok",
+      "rating": 4,
+      "text": "was worried they'd look cheap but the quality is actually fire. premium materials and the fit is great once you adjust the velcro",
+      "date": "3 days ago",
+      "img": 20
+    },
+    {
+      "name": "Nora B.",
+      "platform": "tiktok",
+      "rating": 5,
+      "text": "my feet are SO warm in these it's crazy!! even in negative temps they're like little clouds of warmth. best winter shoe purchase ever 💯",
+      "date": "1 day ago",
+      "img": 21
+    },
+    {
+      "name": "Hannah L.",
+      "platform": "instagram",
+      "rating": 5,
+      "text": "these passed the vibe check fr. warm, comfy, cute, and the price is unbeatable. already recommended to all my friends",
+      "date": "4 days ago",
+      "img": 22
+    }
+  ],
+  "featured_reviews": [
+    {
+      "name": "Emily V.",
+      "platform": "trustpilot",
+      "rating": 5,
+      "text": "Outstanding quality for the price point. The shearling is genuine and thick, construction is solid, and they've held up perfectly through daily winter wear. Comparable to brands 3x the price.",
+      "date": "2 weeks ago",
+      "verified": true
+    },
+    {
+      "name": "Victoria M.",
+      "platform": "google",
+      "rating": 5,
+      "text": "Perfect for winter travel. Wore these throughout my trip to Iceland and my feet stayed warm and dry. The velcro is convenient for airport security too.",
+      "date": "1 week ago",
+      "verified": true
+    },
+    {
+      "name": "Mia L.",
+      "platform": "facebook",
+      "rating": 5,
+      "text": "Best winter shoes I've purchased in years. The shearling lining keeps my feet incredibly warm even in -10 degree weather. No more cold toes!",
+      "date": "5 days ago",
+      "verified": true
+    },
+    {
+      "name": "Jessica R.",
+      "platform": "tiktok",
+      "rating": 5,
+      "text": "the quality is insane for the price!! i compared these to my friend's INUIKII sneakers and honestly can't tell the difference. saved like $200 💯",
+      "date": "2 days ago",
+      "verified": false
+    },
+    {
+      "name": "Sophia M.",
+      "platform": "instagram",
+      "rating": 5,
+      "text": "was worried about sizing but these fit perfectly! the velcro closure makes it so easy to adjust. def size up if you want to wear thick socks though 🖤",
+      "date": "1 week ago",
+      "verified": true
+    }
+  ]
+}

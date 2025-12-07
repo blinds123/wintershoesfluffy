@@ -1,0 +1,13 @@
+{
+  "name": "wintershoesfluffy",
+  "version": "1.0.0",
+  "description": "Winter Fluffy Shearling Sneaker Landing Page",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}
