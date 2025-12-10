@@ -83,8 +83,11 @@ h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:700}
 .thumb:hover,.thumb.active{border-color:var(--primary);transform:scale(1.05)}
 
 /* Product Info */
+.identity-preframe{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--primary);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.identity-preframe::before{content:'';width:30px;height:2px;background:var(--primary)}
 .product-info h1{font-size:clamp(28px,5vw,42px);margin-bottom:10px;line-height:1.15;color:var(--text)}
 .tagline{color:var(--text-light);font-size:clamp(16px,2.5vw,18px);margin-bottom:20px;line-height:1.5}
+.tagline em{color:var(--primary);font-style:normal;font-weight:600}
 
 /* Live Viewers */
 .live-viewers{display:flex;align-items:center;gap:8px;background:var(--secondary);padding:10px 16px;border-radius:8px;margin-bottom:16px;border:1px solid var(--border)}
@@ -162,7 +165,7 @@ h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:700}
 .testimonial-card{background:#fff;border-radius:14px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,0.06);border:1px solid var(--border);transition:all 0.3s ease}
 .testimonial-card:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(var(--primary-rgb),0.12);border-color:var(--primary-light)}
 .testimonial-text{font-size:14px;line-height:1.65;color:var(--text);margin-bottom:16px}
-.testimonial-image{width:100%;border-radius:10px;margin-bottom:16px;aspect-ratio:3/4;object-fit:cover}
+.testimonial-image{width:100%;border-radius:10px;margin-bottom:16px;object-fit:contain;max-height:400px}
 .testimonial-footer{display:flex;align-items:center;justify-content:space-between}
 .testimonial-info{flex:1}
 .testimonial-name{font-weight:600;font-size:14px;color:var(--text)}
@@ -180,6 +183,49 @@ h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:700}
 .featured-review .author{font-weight:600;font-size:14px}
 .featured-review .meta{font-size:12px;color:var(--text-light)}
 .verified-badge{display:inline-flex;align-items:center;gap:4px;background:var(--success);color:#fff;padding:3px 8px;border-radius:4px;font-size:10px;font-weight:600;margin-left:8px}
+
+/* Emotional Benefits Section */
+.emotional-benefits{padding:60px 20px;background:linear-gradient(180deg,var(--secondary) 0%,#fff 100%)}
+.benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1000px;margin:0 auto}
+.benefit-card{background:#fff;border-radius:16px;padding:28px 20px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.06);border:1px solid var(--border);transition:all 0.3s ease}
+.benefit-card:hover{transform:translateY(-5px);box-shadow:0 8px 30px rgba(var(--primary-rgb),0.15);border-color:var(--primary-light)}
+.benefit-icon{width:60px;height:60px;margin:0 auto 16px;background:linear-gradient(135deg,var(--primary-light) 0%,var(--primary) 100%);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.benefit-icon svg{width:28px;height:28px;color:#fff}
+.benefit-card h3{font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:8px;color:var(--text)}
+.benefit-card p{font-size:14px;color:var(--text-light);font-style:italic}
+
+/* Comparison Section */
+.comparison-section{padding:60px 20px;background:#fff}
+.comparison-table{display:flex;align-items:stretch;justify-content:center;gap:20px;max-width:900px;margin:0 auto}
+.comparison-col{flex:1;background:var(--secondary);border-radius:16px;padding:30px;max-width:350px}
+.comparison-col.ours{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid var(--success)}
+.comparison-col.competitor{opacity:0.8}
+.comparison-header{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;text-align:center;margin-bottom:12px;color:var(--text)}
+.comparison-col.ours .comparison-header{color:var(--success)}
+.comparison-price{text-align:center;font-size:32px;font-weight:700;margin-bottom:20px;color:var(--text)}
+.comparison-price span{font-size:14px;font-weight:400;color:var(--text-light);display:block}
+.comparison-price .savings{color:var(--success);font-weight:700}
+.comparison-features{list-style:none;padding:0}
+.comparison-features li{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.05);font-size:14px}
+.comparison-features li:last-child{border-bottom:none}
+.comparison-features svg{width:20px;height:20px;color:var(--success);flex-shrink:0}
+.comparison-features li.negative svg{color:var(--warning)}
+.comparison-features li.positive{font-weight:600;color:var(--success)}
+.comparison-vs{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--primary);align-self:center;padding:0 10px}
+
+/* Transformation Section */
+.transformation-section{padding:60px 20px;background:var(--secondary)}
+.transformation-grid{display:flex;align-items:stretch;justify-content:center;gap:20px;max-width:900px;margin:0 auto}
+.transformation-card{flex:1;background:#fff;border-radius:16px;padding:30px;max-width:400px}
+.transformation-card.before{border:2px solid #f0f0f0}
+.transformation-card.after{border:2px solid var(--success);background:linear-gradient(135deg,#f0fdf4,#dcfce7)}
+.transform-label{font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;padding:6px 12px;border-radius:20px;display:inline-block}
+.before .transform-label{background:#f0f0f0;color:var(--text-light)}
+.after .transform-label{background:var(--success);color:#fff}
+.transform-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.05);font-size:15px;line-height:1.4}
+.transform-item:last-child{border-bottom:none}
+.transform-item .emoji{font-size:20px;flex-shrink:0}
+.transformation-arrow{font-size:40px;color:var(--primary);align-self:center;font-weight:700}
 
 /* FAQ Section */
 .faq-section{padding:60px 20px;background:#fff}
@@ -199,13 +245,22 @@ h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:700}
 .footer-section a:hover{color:#fff}
 .footer-bottom{border-top:1px solid #333;padding-top:20px;text-align:center;color:#999;font-size:12px}
 
+/* Purchase Notification Ticker */
+.purchase-ticker{position:fixed;bottom:100px;left:20px;background:#fff;padding:12px 18px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.15);z-index:998;transform:translateX(-120%);transition:transform 0.4s ease;border:1px solid var(--border)}
+.purchase-ticker.visible{transform:translateX(0)}
+.ticker-content{display:flex;align-items:center;gap:10px;font-size:13px}
+.ticker-content svg{width:20px;height:20px;color:var(--success)}
+.ticker-time{color:var(--text-lighter);font-size:11px}
+
 /* Sticky Mobile CTA */
 .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:12px 16px;box-shadow:0 -4px 20px rgba(0,0,0,0.15);z-index:1000;display:none;border-top:3px solid var(--primary)}
 .sticky-cta.visible{display:block;animation:slideUp 0.3s ease}
 @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
 .sticky-row{display:flex;align-items:center;gap:12px}
+.sticky-info{display:flex;flex-direction:column;gap:2px}
 .sticky-price{font-size:22px;font-weight:700;color:var(--primary)}
 .sticky-old{font-size:14px;color:var(--text-lighter);text-decoration:line-through;margin-left:6px}
+.sticky-viewers{font-size:11px;color:var(--text-light)}
 .sticky-cta .cta-btn{flex:1;margin:0;min-height:52px;font-size:15px}
 
 /* Order Bump Popup */
@@ -254,6 +309,7 @@ h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:700}
 .main-img{border-radius:12px}
 .product-info h1{font-size:26px}
 .tagline{font-size:15px}
+.identity-preframe{font-size:11px;letter-spacing:1.5px}
 .trust-grid{grid-template-columns:repeat(2,1fr);gap:8px;padding:12px}
 .trust-badge svg{width:24px;height:24px}
 .trust-badge-text{font-size:10px}
@@ -263,6 +319,20 @@ h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:700}
 .worn-by-bar .influencer span{display:none}
 .featured-review{flex:0 0 280px}
 body{padding-bottom:80px}
+/* New Sections Mobile */
+.benefits-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+.benefit-card{padding:20px 16px}
+.benefit-card h3{font-size:16px}
+.benefit-card p{font-size:12px}
+.benefit-icon{width:50px;height:50px}
+.benefit-icon svg{width:22px;height:22px}
+.comparison-table{flex-direction:column;gap:16px}
+.comparison-vs{transform:rotate(90deg);padding:10px 0}
+.comparison-col{max-width:none}
+.transformation-grid{flex-direction:column;gap:16px}
+.transformation-arrow{transform:rotate(90deg);padding:10px 0}
+.transformation-card{max-width:none}
+.purchase-ticker{left:10px;right:10px;bottom:90px}
 }
 
 /* Reduced Motion */
@@ -270,6 +340,21 @@ body{padding-bottom:80px}
 *{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
 }
 </style>
+
+<!-- Snap Pixel Code -->
+<script type='text/javascript'>
+(function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
+{a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
+a.queue=[];var s='script';r=t.createElement(s);r.async=!0;
+r.src=n;var u=t.getElementsByTagName(s)[0];
+u.parentNode.insertBefore(r,u);})(window,document,
+'https://sc-static.net/scevent.min.js');
+
+snaptr('init', '78591e18-0e3e-419a-bbd1-c0f230bd3eb4');
+snaptr('track', 'PAGE_VIEW');
+</script>
+<!-- End Snap Pixel Code -->
+
 </head>
 
 <body>
@@ -367,8 +452,9 @@ body{padding-bottom:80px}
 
       <!-- Product Info -->
       <div class="product-info">
+        <p class="identity-preframe reveal visible">For women who refuse to freeze for fashion</p>
         <h1 class="reveal visible">Winter Fluffy Shearling Sneaker</h1>
-        <p class="tagline reveal visible">Where cozy warmth meets European craftsmanship. Premium shearling wool lining with velcro closure for effortless winter style.</p>
+        <p class="tagline reveal visible">The shearling sneaker that looks like €219 INUIKII... but your bank account will thank you. European craftsmanship. TikTok-approved style. Warmth that lasts all day. <em>Finally.</em></p>
 
         <!-- Live Viewers -->
         <div class="live-viewers reveal visible">
@@ -422,11 +508,11 @@ body{padding-bottom:80px}
 
         <!-- CTA Buttons -->
         <button class="cta-btn cta-primary reveal visible" onclick="handleAddToCart('primary')">
-          <span>ADD TO CART - $59</span>
+          <span>YES - WARM FEET + STYLE FOR $59</span>
           <span class="btn-subtitle">Free Shipping - Ships Today</span>
         </button>
         <button class="cta-btn cta-secondary reveal visible" onclick="handleAddToCart('secondary')">
-          <span>PRE-ORDER - $19</span>
+          <span>PRE-ORDER FOR $19</span>
           <span class="btn-subtitle">Ships in 2-3 Weeks - Save $40</span>
         </button>
 
@@ -525,21 +611,99 @@ body{padding-bottom:80px}
     </div>
   </div>
 
-  <!-- Featured Reviews Carousel -->
-  <section class="featured-reviews">
+  <!-- Emotional Benefits Section -->
+  <section class="emotional-benefits">
     <div class="container">
-      <h2 class="section-title reveal">What Our Customers Say</h2>
-      <p class="section-subtitle reveal">Join thousands of happy customers</p>
-      <div class="reviews-carousel" id="featuredCarousel"></div>
+      <h2 class="section-title reveal">Why 10,847 Women Made The Switch</h2>
+      <p class="section-subtitle reveal">They stopped choosing between style and warmth</p>
+      <div class="benefits-grid">
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 0 0-5 5v3H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-2V7a5 5 0 0 0-5-5z"/><circle cx="12" cy="16" r="2"/></svg>
+          </div>
+          <h3>Warm Feet, Finally</h3>
+          <p>"No more frozen toes at the Christmas market"</p>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>Compliment-Worthy</h3>
+          <p>"Get ready for 'OMG where did you get those?'"</p>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Smart Price</h3>
+          <p>"Same quality as €219 boots. Your secret."</p>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3>European Style</h3>
+          <p>"Look like you just came back from the Alps"</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Testimonials Grid -->
-  <section class="testimonials-section">
+  <!-- The Comparison Section -->
+  <section class="comparison-section">
     <div class="container">
-      <h2 class="section-title reveal">Real Reviews from Real Customers</h2>
-      <p class="section-subtitle reveal">Verified purchases - 4.9/5 average rating</p>
-      <div class="testimonials-grid" id="testimonialsGrid"></div>
+      <h2 class="section-title reveal">The Smart Shopper's Secret</h2>
+      <p class="section-subtitle reveal">Same look. Same warmth. Better price.</p>
+      <div class="comparison-table reveal">
+        <div class="comparison-col competitor">
+          <div class="comparison-header">INUIKII</div>
+          <div class="comparison-price">€219 <span>($240)</span></div>
+          <ul class="comparison-features">
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Shearling wool lining</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Velcro closure</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> European craftsmanship</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Anti-slip sole</li>
+            <li class="negative"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> Brand name markup</li>
+          </ul>
+        </div>
+        <div class="comparison-vs">VS</div>
+        <div class="comparison-col ours">
+          <div class="comparison-header">Winter Fluffy</div>
+          <div class="comparison-price">$59 <span class="savings">Save $181!</span></div>
+          <ul class="comparison-features">
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Shearling wool lining</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Velcro closure</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> European craftsmanship</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Anti-slip sole</li>
+            <li class="positive"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Smart shopper savings</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Transformation -->
+  <section class="transformation-section">
+    <div class="container">
+      <h2 class="section-title reveal">The Winter Style Upgrade</h2>
+      <p class="section-subtitle reveal">Which version of winter are you living?</p>
+      <div class="transformation-grid">
+        <div class="transformation-card before reveal">
+          <div class="transform-label">BEFORE</div>
+          <div class="transform-item"><span class="emoji">😰</span> Choosing between cold feet or ugly boots</div>
+          <div class="transform-item"><span class="emoji">😤</span> Scrolling past €219 boots you can't justify</div>
+          <div class="transform-item"><span class="emoji">🥶</span> Dreading every outdoor winter event</div>
+          <div class="transform-item"><span class="emoji">😞</span> Feeling like style is only for rich people</div>
+        </div>
+        <div class="transformation-arrow">→</div>
+        <div class="transformation-card after reveal">
+          <div class="transform-label">AFTER</div>
+          <div class="transform-item"><span class="emoji">😍</span> Warm, stylish, and getting compliments everywhere</div>
+          <div class="transform-item"><span class="emoji">🤑</span> Same look, $181 still in your pocket</div>
+          <div class="transform-item"><span class="emoji">❄️</span> Actually excited to show off your winter style</div>
+          <div class="transform-item"><span class="emoji">💅</span> Looking expensive without the expense</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -558,6 +722,7 @@ body{padding-bottom:80px}
             <p>Our shearling wool lining provides exceptional warmth, keeping your feet cozy in temperatures as low as -10°C (14°F). The natural wool regulates temperature and wicks moisture, so your feet stay warm without sweating.</p>
           </div>
         </div>
+
         <div class="accordion" id="faq2">
           <div class="accordion-header" onclick="toggleAccordion('faq2')">
             <span>Are they waterproof?</span>
@@ -567,6 +732,7 @@ body{padding-bottom:80px}
             <p>The suede upper is naturally water-resistant but not fully waterproof. We recommend applying a waterproof spray before first wear for added protection against snow and light rain.</p>
           </div>
         </div>
+
         <div class="accordion" id="faq3">
           <div class="accordion-header" onclick="toggleAccordion('faq3')">
             <span>What's the difference vs INUIKII?</span>
@@ -576,8 +742,9 @@ body{padding-bottom:80px}
             <p>Our sneakers feature the same premium materials and European craftsmanship as INUIKII at a fraction of the price. We've cut out the middlemen and designer markups to offer you luxury quality at $59 vs their €219.</p>
           </div>
         </div>
-        <div class="accordion" id="faq4">
-          <div class="accordion-header" onclick="toggleAccordion('faq4')">
+
+        <div class="accordion" id="faq4b">
+          <div class="accordion-header" onclick="toggleAccordion('faq4b')">
             <span>Can I wear them in snow?</span>
             <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
@@ -585,6 +752,7 @@ body{padding-bottom:80px}
             <p>Yes! The anti-slip herringbone rubber sole provides excellent traction on snow and ice. Many customers wear these daily throughout winter, including in snowy conditions like Iceland and Canada.</p>
           </div>
         </div>
+
         <div class="accordion" id="faq5">
           <div class="accordion-header" onclick="toggleAccordion('faq5')">
             <span>What if they don't fit?</span>
@@ -598,14 +766,32 @@ body{padding-bottom:80px}
     </div>
   </section>
 
+  <!-- Featured Reviews Carousel -->
+  <section class="featured-reviews">
+    <div class="container">
+      <h2 class="section-title reveal">What Our Customers Say</h2>
+      <p class="section-subtitle reveal">Join thousands of happy customers</p>
+      <div class="reviews-carousel" id="featuredCarousel"></div>
+    </div>
+  </section>
+
+  <!-- Testimonials Grid -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title reveal">Real Reviews from Real Customers</h2>
+      <p class="section-subtitle reveal">Verified purchases - 4.9/5 average rating</p>
+      <div class="testimonials-grid" id="testimonialsGrid"></div>
+    </div>
+  </section>
+
   <!-- Final CTA Section -->
   <section class="final-cta">
     <div class="container">
-      <h2 class="reveal">Ready to Stay Cozy This Winter?</h2>
-      <p class="reveal">Join 10,000+ happy customers who upgraded their winter footwear</p>
+      <h2 class="reveal">Stop Freezing for Fashion</h2>
+      <p class="reveal">Join 10,847 smart women who got the €219 look for $59</p>
       <button class="cta-btn reveal" onclick="scrollToTop()">
-        <span>ORDER NOW - $59</span>
-        <span class="btn-subtitle">Free Shipping + 30-Day Returns</span>
+        <span>YES - I WANT WARM FEET + STYLE</span>
+        <span class="btn-subtitle">Free Shipping + 30-Day Risk-Free Returns</span>
       </button>
     </div>
   </section>
@@ -639,14 +825,24 @@ body{padding-bottom:80px}
   </div>
 </footer>
 
+<!-- Purchase Notification Ticker -->
+<div class="purchase-ticker" id="purchaseTicker">
+  <div class="ticker-content">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+    <span id="tickerText">Sarah from NYC just ordered</span>
+    <span class="ticker-time">2 min ago</span>
+  </div>
+</div>
+
 <!-- Sticky Mobile CTA -->
 <div class="sticky-cta" id="stickyCta">
   <div class="sticky-row">
-    <div>
+    <div class="sticky-info">
       <span class="sticky-price">$59</span>
       <span class="sticky-old">$219</span>
+      <span class="sticky-viewers">👀 <span id="stickyViewers">47</span> viewing</span>
     </div>
-    <button class="cta-btn cta-primary" onclick="handleAddToCart('primary')">ORDER NOW</button>
+    <button class="cta-btn cta-primary" onclick="handleAddToCart('primary')">GET MINE</button>
   </div>
 </div>
 
@@ -723,6 +919,18 @@ document.addEventListener('DOMContentLoaded', function() {
   initSizeTimeout();
   initScrollProgress();
   initStickyCtaObserver();
+  initPurchaseTicker();
+
+  // Snapchat Pixel: VIEW_CONTENT event
+  if (typeof snaptr !== 'undefined') {
+    snaptr('track', 'VIEW_CONTENT', {
+      'content_name': CONFIG.productName,
+      'content_category': 'Footwear',
+      'content_ids': ['winter-fluffy-sneaker'],
+      'currency': 'USD',
+      'price': CONFIG.priceOrder
+    });
+  }
 });
 
 // Load Thumbnails
@@ -794,12 +1002,42 @@ function initScrollObserver() {
 // Viewer Count Animation
 function initViewerCount() {
   const el = document.getElementById('viewerCount');
+  const stickyViewers = document.getElementById('stickyViewers');
   setInterval(() => {
     const change = Math.random() > 0.5 ? 1 : -1;
     const current = parseInt(el.textContent);
     const newVal = Math.max(28, Math.min(67, current + change));
     el.textContent = newVal;
+    if (stickyViewers) stickyViewers.textContent = newVal;
   }, 5000);
+}
+
+// Purchase Notification Ticker
+function initPurchaseTicker() {
+  const ticker = document.getElementById('purchaseTicker');
+  const tickerText = document.getElementById('tickerText');
+  const names = ['Sarah', 'Emma', 'Jessica', 'Olivia', 'Sophia', 'Isabella', 'Mia', 'Charlotte', 'Amelia', 'Harper'];
+  const cities = ['NYC', 'LA', 'Chicago', 'Miami', 'Austin', 'Denver', 'Seattle', 'Boston', 'Portland', 'Nashville'];
+
+  function showTicker() {
+    const name = names[Math.floor(Math.random() * names.length)];
+    const city = cities[Math.floor(Math.random() * cities.length)];
+    tickerText.textContent = `${name} from ${city} just ordered`;
+    ticker.classList.add('visible');
+
+    setTimeout(() => {
+      ticker.classList.remove('visible');
+    }, 4000);
+  }
+
+  // Show first notification after 8 seconds
+  setTimeout(showTicker, 8000);
+
+  // Then show every 25-45 seconds
+  setInterval(() => {
+    const delay = Math.random() * 20000 + 25000;
+    setTimeout(showTicker, delay);
+  }, 45000);
 }
 
 // Stock Count
@@ -889,6 +1127,18 @@ function handleAddToCart(type) {
     return;
   }
 
+  // Snapchat Pixel: ADD_CART event
+  const cartPrice = type === 'secondary' ? CONFIG.pricePreorder : CONFIG.priceOrder;
+  if (typeof snaptr !== 'undefined') {
+    snaptr('track', 'ADD_CART', {
+      'content_name': CONFIG.productName,
+      'content_ids': ['winter-fluffy-sneaker'],
+      'currency': 'USD',
+      'price': cartPrice,
+      'number_items': 1
+    });
+  }
+
   if (type === 'secondary') {
     // Pre-order shows order bump popup
     document.getElementById('orderBumpPopup').classList.add('active');
@@ -908,6 +1158,18 @@ function closePopup() {
 // Accept Bump
 function acceptBump() {
   closePopup();
+
+  // Snapchat Pixel: ADD_CART event for order bump
+  if (typeof snaptr !== 'undefined') {
+    snaptr('track', 'ADD_CART', {
+      'content_name': 'Winter Care Kit Bundle',
+      'content_ids': ['winter-care-kit'],
+      'currency': 'USD',
+      'price': CONFIG.priceBump,
+      'number_items': 1
+    });
+  }
+
   processOrder(CONFIG.priceBump);
 }
 
@@ -933,6 +1195,17 @@ async function processOrder(amount) {
     const redirectUrl = data.exchangeUrl || data.url;
 
     if (redirectUrl) {
+      // Snapchat Pixel: START_CHECKOUT event before redirect
+      if (typeof snaptr !== 'undefined') {
+        snaptr('track', 'START_CHECKOUT', {
+          'content_name': CONFIG.productName,
+          'content_ids': ['winter-fluffy-sneaker'],
+          'currency': 'USD',
+          'price': amount,
+          'number_items': 1
+        });
+      }
+
       window.location.href = redirectUrl;
     } else {
       overlay.classList.remove('active');
