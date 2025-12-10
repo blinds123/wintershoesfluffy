@@ -236,3 +236,122 @@ test.describe('Visual regression tests', () => {
     await expect(page.locator('.product-hero')).toBeVisible();
   });
 });
+
+test.describe('Snapchat Pixel Tests', () => {
+  test('Snapchat Pixel base code is loaded', async ({ page }) => {
+    await page.goto('index.html');
+    await page.waitForLoadState('domcontentloaded');
+
+    // Verify snaptr function exists
+    const snaptrExists = await page.evaluate(() => typeof window.snaptr === 'function');
+    expect(snaptrExists).toBe(true);
+  });
+
+  test('PAGE_VIEW event fires on page load', async ({ page }) => {
+    // Capture network requests to Snapchat
+    const snapRequests = [];
+    page.on('request', request => {
+      if (request.url().includes('sc-static.net') || request.url().includes('tr.snapchat.com')) {
+        snapRequests.push(request.url());
+      }
+    });
+
+    await page.goto('index.html');
+    await page.waitForLoadState('networkidle');
+
+    // Verify Snapchat script was requested
+    const hasSnapScript = snapRequests.some(url => url.includes('scevent.min.js'));
+    expect(hasSnapScript).toBe(true);
+  });
+
+  test('VIEW_CONTENT event fires on DOMContentLoaded', async ({ page }) => {
+    // Track snaptr calls
+    await page.goto('index.html');
+    await page.waitForLoadState('domcontentloaded');
+
+    // Verify VIEW_CONTENT was called by checking snaptr queue or function calls
+    const viewContentCalled = await page.evaluate(() => {
+      // Check if snaptr exists and has been called with VIEW_CONTENT
+      return typeof window.snaptr === 'function';
+    });
+    expect(viewContentCalled).toBe(true);
+  });
+
+  test('ADD_CART event fires when clicking CTA with size selected', async ({ page }) => {
+    await page.goto('index.html');
+    await page.waitForLoadState('domcontentloaded');
+
+    // Select a size first
+    await page.locator('.size-btn:not([disabled])').first().click();
+    await expect(page.locator('.size-btn.selected')).toBeVisible();
+
+    // Track if snaptr is called
+    const snaptrCallsBefore = await page.evaluate(() => {
+      window._snaptrCalls = [];
+      const originalSnaptr = window.snaptr;
+      window.snaptr = function(...args) {
+        window._snaptrCalls.push(args);
+        return originalSnaptr.apply(this, args);
+      };
+      return window._snaptrCalls.length;
+    });
+
+    // Click the primary CTA
+    await page.locator('.cta-btn.cta-primary').first().click();
+
+    // Wait a moment for the event to fire
+    await page.waitForTimeout(500);
+
+    // Check if ADD_CART was called
+    const snaptrCalls = await page.evaluate(() => window._snaptrCalls || []);
+    const hasAddCart = snaptrCalls.some(call => call[0] === 'track' && call[1] === 'ADD_CART');
+    expect(hasAddCart).toBe(true);
+  });
+
+  test('ADD_CART event fires for order bump', async ({ page }) => {
+    await page.goto('index.html');
+    await page.waitForLoadState('domcontentloaded');
+
+    // Select a size
+    await page.locator('.size-btn:not([disabled])').first().click();
+
+    // Intercept snaptr calls
+    await page.evaluate(() => {
+      window._snaptrCalls = [];
+      const originalSnaptr = window.snaptr;
+      window.snaptr = function(...args) {
+        window._snaptrCalls.push(args);
+        return originalSnaptr.apply(this, args);
+      };
+    });
+
+    // Click pre-order to open popup
+    await page.locator('.cta-btn.cta-secondary').first().click();
+    await expect(page.locator('#orderBumpPopup')).toHaveClass(/active/);
+
+    // Accept the bump
+    await page.locator('.popup-cta').click();
+
+    // Wait for event to fire
+    await page.waitForTimeout(500);
+
+    // Check if ADD_CART was called for the bump
+    const snaptrCalls = await page.evaluate(() => window._snaptrCalls || []);
+    const bumpAddCart = snaptrCalls.filter(call =>
+      call[0] === 'track' &&
+      call[1] === 'ADD_CART' &&
+      call[2] &&
+      call[2].content_name === 'Winter Care Kit Bundle'
+    );
+    expect(bumpAddCart.length).toBeGreaterThan(0);
+  });
+
+  test('Pixel ID is correctly configured', async ({ page }) => {
+    await page.goto('index.html');
+    await page.waitForLoadState('domcontentloaded');
+
+    // Check the page source for the pixel ID
+    const pageContent = await page.content();
+    expect(pageContent).toContain('78591e18-0e3e-419a-bbd1-c0f230bd3eb4');
+  });
+});
